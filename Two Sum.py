@@ -11,4 +11,3 @@ for i in range(0,len(arr)):
         if arr[i] + arr[j] == target:
             print(i,j)
         break
-print("Hii this question is solved ")
