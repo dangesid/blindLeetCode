@@ -14,3 +14,5 @@ if target in arr:
     print(arr[target])
 else:
     print("-1")
+
+# This is not in O(log n) will update
