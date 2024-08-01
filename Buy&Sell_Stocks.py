@@ -12,12 +12,25 @@
 
 # arr[i] = price of stock
 # i = day
-arr = [7,1,5,3,6,4]
+# #
+# list_1 = []
+# for i in range(0,len(arr)):
+#     for j in range(i+1,len(arr)):
+#         res = arr[j]-arr[i]
+#         list_1.append(res)
+# print(list_1)
+# print(max(list_1))
 
-list_1 = []
-for i in range(0,len(arr)):
-    for j in range(i+1,len(arr)):
-        res = arr[j]-arr[i]
-        list_1.append(res)
-print(list_1)
-print(max(list_1))
+prices = [7,1,5,3,6,4]
+
+## Better Approach
+
+buy = prices[0]
+profit = 0
+
+for sell in prices:
+    profit = max(profit, sell - buy)
+
+    if sell < buy:
+        buy = sell
+print( profit)

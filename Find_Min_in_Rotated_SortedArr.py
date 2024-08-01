@@ -11,10 +11,18 @@
 # Explanation: The original array was [1,2,3,4,5] rotated 3 times.
 # Output: 1
 arr = [3,4,5,1,2]
-min = arr[0]
-for i in range(0,len(arr)):
-    # find min number from the list
-    if arr[i]<arr[0]:
-        arr[0] = arr[i]
-print(arr[0])
 
+
+def FindMin(arr):
+    left, right = 0, len(arr)-1
+
+    while left<right:
+        mid = (left+right)//2
+
+        if arr[mid]>arr[right]:
+            left = mid+1
+        else:
+            right = mid
+    return arr[left]
+
+print(FindMin(arr))
